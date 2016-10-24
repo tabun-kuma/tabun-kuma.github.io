@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.12.4.js"></script>
+		<script src="./jquery.tabunImageMap.js"></script>
+		<style>
+			.img1 {border 1px solid black; width: 100%;}
+		</style>
+		<title>イメージマップDEMO</title>
+	</head>
+	<body>
+		<h1>[jquery.tabunImageMap.js]DEMO</h1>
+		
+		<img src="img1.png" usemap="#mapinfo1" class="img1" />
+		<map name="mapinfo1">
+			<area shape="circle" data-coords="134,102,55" alt="まる"
+				href="javascript:return false;" onclick="alert('まるをクリック');"/>
+			<area shape="rect" data-coords="378,138,466,225" alt="しかく"
+				href="javascript:return false;" onclick="alert('しかくをクリック');" />
+			<area shape="poly" data-coords="192,245,193,343,292,343" alt="さんかく"
+				href="javascript:return false;" onclick="alert('さんかくをクリック');" />
+		</map>
+		
+		<script>
+			$('map').tabunImageMap();
+		</script>
+		
+	</body>
+</html>

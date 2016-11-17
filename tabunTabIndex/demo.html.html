@@ -1,0 +1,157 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.12.4.js"></script>
+		<script src="./jquery.tabunTabIndex.js"></script>
+		<style>
+			div{
+				margin: 10px;
+			}
+			table{
+				margin: 10px;
+				border-collapse: collapse;
+			}
+			th, td{
+				padding: 5px;
+				border: 1px solid silver;
+			}
+			th{
+				background-color: #99CCFF;
+			}
+			input:focus, select:focus{
+				background-color: #FFFF66;
+			}
+			input[type="radio"]:focus, input[type="checkbox"]:focus{
+				width: 15px;
+				height:15px;
+				color:red;
+			}
+		</style>
+		<title>タブインデックスDEMO</title>
+	</head>
+	<body>
+		<h1>[jquery.tabunTabIndex.js]DEMO</h1>
+		
+		<form>
+			<div class="tabGroup1">
+				<div><input type="button" value="button1" id="start"></div>
+				<div><input type="text" value="text1"></div>
+				<div><input type="text" value="text2"></div>
+				<div><input type="text" value="text3"></div>
+				<div><input type="hidden" value="hidden1"></div>
+				<div><input type="hidden" value="hidden2"></div>
+				<div>
+					<table>
+						<thead>
+							<tr>
+								<th>head1</th>
+								<th>head2</th>
+								<th>head3</th>
+								<th>head4</th>
+								<th>head5</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>body1-1</td>
+								<td><input type="text" value="body1-2"></td>
+								<td><input type="radio" value="body1-3"></td>
+								<td><select><option value="body1-4">body1-4</option></select></td>
+								<td>body1-5</td>
+							</tr>
+							<tr>
+								<td>body2-1</td>
+								<td><input type="text" value="body2-2"></td>
+								<td><input type="radio" value="body2-3"></td>
+								<td><select><option value="body1-4">body2-4</option></select></td>
+								<td>body2-5</td>
+							</tr>
+							<tr>
+								<td>body3-1</td>
+								<td><input type="text" value="body3-2"></td>
+								<td>body3-3</td>
+								<td><select><option value="body1-4">body3-4</option></select></td>
+								<td>body3-5</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div><input type="text" value="text4"></div>
+				<div><input type="button" value="button2"></div>
+				<p id="selectValue1"></p>
+			</div>
+			<hr>
+			<div class="tabGroup2">
+				<div><input type="button" value="button1" id="start"></div>
+				<div><input type="text" value="text1"></div>
+				<div><input type="text" value="text2"></div>
+				<div><input type="text" value="text3"></div>
+				<div>
+					<table>
+						<thead>
+							<tr>
+								<th>head1</th>
+								<th>head2</th>
+								<th>head3</th>
+								<th>head4</th>
+								<th>head5</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" value="body1-1"></td>
+								<td><input type="text" value="body1-2"></td>
+								<td>body1-3</td>
+								<td>body1-4</td>
+								<td><input type="text" value="body1-5"></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" value="body2-1"></td>
+								<td><input type="text" value="body2-2"></td>
+								<td>body2-3</td>
+								<td>body2-4</td>
+								<td>body2-5</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" value="body3-1"></td>
+								<td><input type="text" value="body3-2"></td>
+								<td>body3-3</td>
+								<td>body3-4</td>
+								<td><input type="text" value="body1-5"></td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<div><input type="text" value="text4"></div>
+				<div><input type="button" value="button2"></div>
+				<p id="selectValue2"></p>
+			</div>
+			<hr>
+			<input type="submit" value="submit">
+		</form>
+		<script>
+			//タブグループ１
+			$('.tabGroup1').tabunTabIndex({
+				groupNo:1
+			});
+			//タブグループ２
+			$('.tabGroup2').tabunTabIndex({
+				groupNo:2,
+				enterDown: false
+			});
+
+			$('#start').focus();
+			$('.tabGroup1 :input').focus(function(){
+				$('#selectValue1').text($(this).val());
+			});
+			$('.tabGroup2 :input').focus(function(){
+				$('#selectValue2').text($(this).val());
+			});
+			$('form').submit(function(){alert('submit');});
+		</script>
+		
+	</body>
+</html>

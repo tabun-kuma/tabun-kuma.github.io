@@ -1,0 +1,32 @@
+﻿{
+  "config": {
+    "main": "main.js"
+  },
+	"audios": {
+		"bgm1": "bgm/bgm1.mp3",
+		"bgm2": "bgm/bgm2.mp3",
+		"bgm3": "bgm/bgm3.mp3",
+		"clear": "bgm/clear.mp3",
+		"gameover": "bgm/bgm99.mp3",
+		"kyaaa": "bgm/kyaaa.mp3",
+		"piro": "bgm/piro.mp3",
+		"wahaha": "bgm/wahaha.mp3"
+	},
+	"images": {
+		"akuma": "images/image4.png",
+		"back1": "images/image1.png",
+		"chara1": "images/chara1.png",
+		"chara2": "images/chara2.png",
+		"clear": "images/clear.png",
+		"endroll": "images/endroll.png",
+		"gameover": "images/gameover.png",
+		"hito": "images/image3.png",
+		"icon1": "images/icon1.png",
+		"shinigami1": "images/image2.png",
+		"shinigami2": "images/image5.png",
+		"story1": "images/story1.png",
+		"story2": "images/mitsuketa.png",
+		"title": "images/title.png"
+	},
+  "name": "resources.json"
+}
